@@ -1,0 +1,190 @@
+<resources>
+    <string name="app_name">Jingle</string>
+
+    <!-- Navigation Icon Labels -->
+    <string name="albumIcon">Albums</string>
+    <string name="AllSongsIcon">All Songs</string>
+    <string name="radioIcon">Radio</string>
+
+    <!-- Descriptions for images in Song List View-->
+    <string name="playSongButtonDesc">This button plays this song when clicked</string>
+    <string name="albumCoverPic">This Image displays picture of Album cover for this song</string>
+
+    <!-- Artist Names-->
+    <string name="Yaakov_Shwekey">Yaakov Shwekey</string>
+    <string name="Boruch_Levine">Boruch Levine</string>
+    <string name="Abie_Rotneberg">Abie Rotenberg</string>
+    <string name="Shalsheles">Shalsheles</string>
+
+    <string name="hyphen"> - </string>
+
+    <!-- Album and Track Names-->
+
+    <!-- Album 1-->
+    <string name="Kolot_Name">Kolot</string>
+    <string name="Kolot_Track_1">Am Yisrael</string>
+    <string name="Kolot_Track_2">Kolot</string>
+    <string name="Kolot_Track_3">Smeichim</string>
+    <string name="Kolot_Track_4">Tefilat Kallah</string>
+    <string name="Kolot_Track_5">Ach Sameach</string>
+    <string name="Kolot_Track_6">Ze Hakatan</string>
+    <string name="Kolot_Track_7">Osim Tshuvah </string>
+    <string name="Kolot_Track_8">Kamu Baneha</string>
+    <string name="Kolot_Track_9">Et Rekod</string>
+    <string name="Kolot_Track_10">Asara Bnei Adam</string>
+
+    <!-- Album 2-->
+    <string name="WeAreAMiracle_Name">We Are A Miracle</string>
+    <string name="WeAreAMiracle_Track1">Maamin Benisim</string>
+    <string name="WeAreAMiracle_Track2">Birchas Habayis</string>
+    <string name="WeAreAMiracle_Track3">We Are a Miracle</string>
+    <string name="WeAreAMiracle_Track4">Smachot</string>
+    <string name="WeAreAMiracle_Track5">Mo Ohavti</string>
+    <string name="WeAreAMiracle_Track6">Biderech Hamelech</string>
+    <string name="WeAreAMiracle_Track7">Maran Sheli</string>
+    <string name="WeAreAMiracle_Track8">Inshallah</string>
+    <string name="WeAreAMiracle_Track9">Chaim Shel Shalom</string>
+    <string name="WeAreAMiracle_Track10">Chaval Al Hazman</string>
+    <string name="WeAreAMiracle_Track11">Nitzotzot</string>
+
+    <!-- Album 3-->
+    <string name="Shwekey_2_Name">Shwekey 2</string>
+    <string name="Shwekey2_Track1">Pisom Yovoi Moshiach</string>
+    <string name="Shwekey2_Track2">Av Harachamim</string>
+    <string name="Shwekey2_Track3">Hiney Ma Tov</string>
+    <string name="Shwekey2_Track4">Mi Adir</string>
+    <string name="Shwekey2_Track5">Chavi Kimat Rega</string>
+    <string name="Shwekey2_Track6">Ranenu Tzadikim</string>
+    <string name="Shwekey2_Track7">Hamelamed Torah</string>
+    <string name="Shwekey2_Track8">Venoh Al Tatzrichenu</string>
+    <string name="Shwekey2_Track9">Ki Hatov</string>
+    <string name="Shwekey2_Track10">Al Naharos Bavel</string>
+    <string name="Shwekey2_Track11">Uvau Haovdim</string>
+
+    <!-- Album 4-->
+    <string name="Ad_Bli_Di">Ad Bli Di</string>
+    <string name="Ad_Bli_Di_Track1">Areivim</string>
+    <string name="Ad_Bli_Di_Track2">Tshuvah</string>
+    <string name="Ad_Bli_Di_Track3">Veshochanti</string>
+    <string name="Ad_Bli_Di_Track4">Mimkomcho</string>
+    <string name="Ad_Bli_Di_Track5">Natzliach</string>
+    <string name="Ad_Bli_Di_Track6">Ovinu</string>
+    <string name="Ad_Bli_Di_Track7">Ad Bli Dai</string>
+    <string name="Ad_Bli_Di_Track8">Ilon</string>
+    <string name="Ad_Bli_Di_Track9">Menagen</string>
+    <string name="Ad_Bli_Di_Track10">Tzadikim</string>
+    <string name="Ad_Bli_Di_Track11">Asher Boro</string>
+    <string name="Ad_Bli_Di_Track12">Music of Forever</string>
+    <string name="Ad_Bli_Di_Track13">Vehi Sheomdo</string>
+
+    <!-- Album 5-->
+    <string name="LeShem_Shomaim_Name">LeShem Shomaim</string>
+    <string name="LShem_Shomaim_Track1">Birshus</string>
+    <string name="LShem_Shomaim_Track2">Leshem Shomayim</string>
+    <string name="LShem_Shomaim_Track3">Eishes Chayil</string>
+    <string name="LShem_Shomaim_Track4">Emes</string>
+    <string name="LShem_Shomaim_Track5">Yizkerem</string>
+    <string name="LShem_Shomaim_Track6">Halo Yadata</string>
+    <string name="LShem_Shomaim_Track7">Tatte Yiddish</string>
+    <string name="LShem_Shomaim_Track8">Hein Am</string>
+    <string name="LShem_Shomaim_Track9">Ki Hashem</string>
+    <string name="LShem_Shomaim_Track10">Ma Ma Ma</string>
+    <string name="LShem_Shomaim_Track11">Meshoch</string>
+    <string name="LShem_Shomaim_Track12">Koili</string>
+    <string name="LShem_Shomaim_Track13">Tatte English</string>
+
+    <!-- Album 6-->
+    <string name="Relax_Name">Relax</string>
+    <string name="Relax_Track1">Modim</string>
+    <string name="Relax_Track2">Keayol</string>
+    <string name="Relax_Track3">Tefilat Kallah</string>
+    <string name="Relax_Track4">Ve\'yiyu Rachamecha</string>
+    <string name="Relax_Track5">Kol Berama</string>
+    <string name="Relax_Track6">Kesser</string>
+    <string name="Relax_Track7">Melech Malchei</string>
+    <string name="Relax_Track8">Bitchu</string>
+    <string name="Relax_Track9">Koach</string>
+    <string name="Relax_Track10">Lecha Dodi</string>
+    <string name="Relax_Track11">Pischi Li</string>
+    <string name="Relax_Track12">Else Hanaar Hazeh</string>
+    <string name="Relax_Track13">Besheim Hashem</string>
+    <string name="Relax_Track14">Yesimcho</string>
+    <string name="Relax_Track15">Shomer</string>
+    <string name="Relax_Track16">Umocho</string>
+    <string name="Relax_Track17">Hishbati</string>
+    <string name="Relax_Track18">Rebbe</string>
+    <string name="Relax_Track19">Hastureh</string>
+    <string name="Relax_Track20">Assarah Bnei Adam</string>
+    <string name="Relax_Track21">Keracheim</string>
+    <string name="Relax_Track22">Atoh Horeisoh</string>
+    <string name="Relax_Track23">Veseoreiv</string>
+    <string name="Relax_Track24">Birchas Habonim</string>
+    <string name="Relax_Track25">Da Lecha Bni</string>
+
+    <!-- Album 7-->
+    <string name="Coming_Home_Name">Coming Home</string>
+    <string name="Coming_Home_Track1">Coming Home</string>
+    <string name="Coming_Home_Track2">Asher Bara</string>
+    <string name="Coming_Home_Track3">Yiboneh</string>
+    <string name="Coming_Home_Track4">V\'hu Keli</string>
+    <string name="Coming_Home_Track5">Ki Mitzion</string>
+    <string name="Coming_Home_Track6">Avinu</string>
+    <string name="Coming_Home_Track7">B\'simcha</string>
+    <string name="Coming_Home_Track8">Lo Hameisim</string>
+    <string name="Coming_Home_Track9">Sim Shalom</string>
+    <string name="Coming_Home_Track10">Home Forever</string>
+
+    <!-- Album 8-->
+    <string name="Libi_BaMizrach_Name">Libi BaMizrach</string>
+    <string name="Libi_BaMizrach_Track1">Libi Bamizrach</string>
+    <string name="Libi_BaMizrach_Track2">Modeh Ani</string>
+    <string name="Libi_BaMizrach_Track3">Chabibi</string>
+    <string name="Libi_BaMizrach_Track4">Boee Beshalom</string>
+    <string name="Libi_BaMizrach_Track5">Yala!</string>
+    <string name="Libi_BaMizrach_Track6">Shir Hayona</string>
+    <string name="Libi_BaMizrach_Track7">Baruch Hashem</string>
+    <string name="Libi_BaMizrach_Track8">Hakadosh</string>
+    <string name="Libi_BaMizrach_Track9">Ten Lo</string>
+    <string name="Libi_BaMizrach_Track10">Rau Banim</string>
+    <string name="Libi_BaMizrach_Track11">Mul E-li</string>
+
+    <!-- Album 9-->
+    <string name="Jouneys2_Name">Journeys 2</string>
+    <string name="Jouneys2_Track1">Ride the Train</string>
+    <string name="Jouneys2_Track2">Teardrop</string>
+    <string name="Jouneys2_Track3">Yismach Moshe</string>
+    <string name="Jouneys2_Track4">Wedding Song</string>
+    <string name="Jouneys2_Track5">Neshomele</string>
+    <string name="Jouneys2_Track6">Little Kite</string>
+    <string name="Jouneys2_Track7">Rebbe of Lublin</string>
+    <string name="Jouneys2_Track8">Ilu Finu</string>
+    <string name="Jouneys2_Track9">Yankel</string>
+    <string name="Jouneys2_Track10">Memories</string>
+
+    <!-- Album 10-->
+    <string name="Boruch_Levine_2_Name">Boruch Levine 2</string>
+    <string name="Boruch_Levine_2_Track1">Vayehi Beshurun</string>
+    <string name="Boruch_Levine_2_Track2">Bonim Atem</string>
+    <string name="Boruch_Levine_2_Track3">Kol Yisroel</string>
+    <string name="Boruch_Levine_2_Track4">Boee B\'shalom</string>
+    <string name="Boruch_Levine_2_Track5">Yom Zeh</string>
+    <string name="Boruch_Levine_2_Track6">Umishefa</string>
+    <string name="Boruch_Levine_2_Track7">Al Kol Neshima</string>
+    <string name="Boruch_Levine_2_Track8">Ata Echad</string>
+    <string name="Boruch_Levine_2_Track9">Ashrei Mi</string>
+    <string name="Boruch_Levine_2_Track10">Kum Hithalech</string>
+
+
+
+
+
+
+
+
+
+
+
+</resources>
+
+
+
