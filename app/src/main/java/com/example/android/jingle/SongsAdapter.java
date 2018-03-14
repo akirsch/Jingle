@@ -53,13 +53,13 @@ public class SongsAdapter extends ArrayAdapter<Song> {
         Song currentSong = getItem(position);
 
         // Find the TextView in the song_list.xml layout with the album name
-        TextView albumNameTextView = listItemView.findViewById(R.id.SongListSongName);
+        TextView albumNameTextView = listItemView.findViewById(R.id.songListSongName);
         // Get the album name from the current Album object and
         // set this text on the album name TextView
         albumNameTextView.setText(currentSong.getmSongTitle());
 
         // Find the TextView in the song_list.xml layout with the artist name
-        TextView artistNameTextView = listItemView.findViewById(R.id.SongListArtistName);
+        TextView artistNameTextView = listItemView.findViewById(R.id.songListArtistName);
         // Get the artist name from the current Album object and
         // set this text on the artist name TextView
         artistNameTextView.setText(currentSong.getmArtist());

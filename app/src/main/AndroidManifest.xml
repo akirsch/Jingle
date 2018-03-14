@@ -23,6 +23,9 @@
             android:name=".Radio"
             android:label="Radio"/>
         <activity android:name=".CurrentAlbumActivity"/>
+        <activity
+            android:name=".NowPlaying"
+            android:label="Now Playing"/>
     </application>
 
 </manifest>

@@ -18,6 +18,8 @@ public class NowPlaying extends AppCompatActivity {
     String songName;
     String artistName;
     int albumCoverId;
+    // create variable to record if song is currently playing
+    Boolean isSongPlaying;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,23 +40,29 @@ public class NowPlaying extends AppCompatActivity {
         TextView albumArtistNameView = findViewById(R.id.nowPlayingArtistName);
         albumArtistNameView.setText(albumName + getResources().getString(R.string.hyphen) + artistName);
 
-        ImageView coverImageView = findViewById(R.id.albumCoverImage);
+        ImageView imageView = findViewById(R.id.albumCoverImage);
+        imageView.setImageResource(albumCoverId);
 
+        // set this Boolean on true, as this activity is opened when a user clicks to play a song
+        isSongPlaying = true;
 
-
-
-
-
-        // program the play/pause button to change icon when clicked
-        ImageButton imageButton = findViewById(R.id.pause_playButton);
-        imageButton.setOnClickListener(new View.OnClickListener() {
+        // find view containing play/pause icon images
+        final ImageButton playPauseButton = findViewById(R.id.pause_playButton);
+        // set click listener on this to govern the button's behaviour when clicked.
+        playPauseButton.setOnClickListener(new View.OnClickListener() {
             // The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onClick(View view) {
-
-
+                if (isSongPlaying){ playPauseButton.setImageResource(R.drawable.ic_play_arrow);
+                isSongPlaying = false;
+                }
+                else playPauseButton.setImageResource(R.drawable.ic_pause);
+                isSongPlaying = true;
             }
         });
+
+
+
 
 
 

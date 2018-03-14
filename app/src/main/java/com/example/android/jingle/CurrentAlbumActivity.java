@@ -22,6 +22,8 @@ import java.util.ArrayList;
 public class CurrentAlbumActivity extends AppCompatActivity {
 
     private String albumName;
+    private ArrayList<Song> albumSongList;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +34,49 @@ public class CurrentAlbumActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         albumName = bundle.getString("albumTitle");
 
+        //find the listView in the XML file
+        listView = findViewById(R.id.currentAlbumSongsList);
+
         // display correct song list for chosen album
-        displayAlbumSongList();
+        final ArrayList<Song> songsInAlbum = makeAlbumSongList();
+
+        //set songs adapter to populate the listView with the correct songs
+        SongsAdapter songsAdapter = new SongsAdapter(this, songsInAlbum);
+
+        listView.setAdapter(songsAdapter);
+
+        //set clickListener on the list view to open new Activity when each songs is clicked
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                //get name of song that was clicked
+                TextView songNameView = view.findViewById(R.id.songListSongName);
+                String songName = songNameView.getText().toString();
+
+                //get name of artist that was clicked
+                TextView artistNameView = view.findViewById(R.id.songListArtistName);
+                String artistName = artistNameView.getText().toString();
+
+                // get Id of image view containing correct album cover
+                int albumCoverId = songsInAlbum.get(position).getmAlbumCover();
+
+                //Create explicit Intent to navigate to Now Playing Activity
+                //Pass this string with the intent to ensure correct song list is opened in new Activity
+                Intent intent = new Intent(CurrentAlbumActivity.this, NowPlaying.class);
+                intent.putExtra("songTitle", songName);
+                intent.putExtra("artist", artistName);
+                intent.putExtra("albumTitle", albumName);
+                intent.putExtra("albumCoverId", albumCoverId);
+                startActivity(intent);
+
+            }
+        });
     }
 
-    public void displayAlbumSongList() {
+    public ArrayList<Song> makeAlbumSongList() {
 
-        ArrayList<Song> albumSongList = new ArrayList<>();
+        albumSongList = new ArrayList<>();
 
         if (albumName.equals(getString(R.string.Kolot_Name))) {
             albumSongList.add(new Song(getResources().getString(R.string.Kolot_Track_1),
@@ -316,36 +354,8 @@ public class CurrentAlbumActivity extends AppCompatActivity {
                     getResources().getString(R.string.Boruch_Levine), R.drawable.boruch_levine_2));
         }
 
-        //set songs adapter to populate the listView with the correct songs
-        SongsAdapter songsAdapter = new SongsAdapter(this, albumSongList);
-        ListView listView = findViewById(R.id.currentAlbumSongsList);
-        listView.setAdapter(songsAdapter);
+        return albumSongList;
 
-        //set clickListener on the list view to open new Activity when each songs is clicked
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                //get name of song that was clicked
-                TextView songNameView = view.findViewById(R.id.songListSongName);
-                String songName = songNameView.getText().toString();
-
-                //get name of artist that was clicked
-                TextView artistNameView = view.findViewById(R.id.songListArtistName);
-                String artistName = artistNameView.getText().toString();
-
-
-
-                //Create explicit Intent to navigate to Now Playing Activity
-                //Pass this string with the intent to ensure correct song list is opened in new Activity
-                Intent intent = new Intent(CurrentAlbumActivity.this, NowPlaying.class);
-                intent.putExtra("songTitle", songName);
-                intent.putExtra("artist", artistName);
-                intent.putExtra("albumTitle", albumName);
-                startActivity(intent);
-
-            }
-        });
 
     }
 }
