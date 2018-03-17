@@ -34,17 +34,17 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
     /**
      * Provides a view for an AdapterView
      *
-     * @param position The position in the list of data that should be displayed in the
-     *                 list item view.
+     * @param position    The position in the list of data that should be displayed in the
+     *                    list item view.
      * @param convertView The recycled view to populate.
-     * @param parent The parent ViewGroup that is used for inflation.
+     * @param parent      The parent ViewGroup that is used for inflation.
      * @return The View for the position in the AdapterView.
      */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Check if the existing view is being reused, otherwise inflate the view
         View gridItemView = convertView;
-        if(gridItemView == null) {
+        if (gridItemView == null) {
             gridItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.album_list, parent, false);
         }
@@ -62,7 +62,7 @@ public class AlbumAdapter extends ArrayAdapter<Album> {
         TextView artistNameTextView = gridItemView.findViewById(R.id.artistName_text_view);
         // Get the artist name from the current Album object and
         // set this text on the artist name TextView
-       artistNameTextView.setText(currentAlbum.getmArtistName());
+        artistNameTextView.setText(currentAlbum.getmArtistName());
 
         // Find the ImageView in the album_list.xml layout with the ID albumCoverImage
         ImageView albumCoverView = gridItemView.findViewById(R.id.albumCoverImage);

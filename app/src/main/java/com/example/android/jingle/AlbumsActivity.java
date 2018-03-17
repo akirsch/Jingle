@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,7 +15,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Albums extends AppCompatActivity {
+public class AlbumsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +26,16 @@ public class Albums extends AppCompatActivity {
         navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-               switch (item.getItemId()){
-                   case R.id.album_navigation:
-                       Intent intent0 = new Intent(Albums.this, Albums.class);
-                       startActivity(intent0);
-                       break;
-                   case R.id.music_navigation:
-                       Intent intent1 = new Intent(Albums.this, AllSongs.class);
-                       startActivity(intent1);
-                       break;
-                   case R.id.radio_navigation:
-                       Intent intent2 = new Intent(Albums.this, Radio.class);
-                       startActivity(intent2);
-                       break;
-               }
+                switch (item.getItemId()) {
+                    case R.id.album_navigation:
+                        Intent intent0 = new Intent(AlbumsActivity.this, AlbumsActivity.class);
+                        startActivity(intent0);
+                        break;
+                    case R.id.music_navigation:
+                        Intent intent1 = new Intent(AlbumsActivity.this, AllSongsActivity.class);
+                        startActivity(intent1);
+                        break;
+                }
                 return true;
             }
         });
@@ -82,7 +80,7 @@ public class Albums extends AppCompatActivity {
 
                 //Create explicit Intent to navigate to Now Playing Activity
                 //Pass this string with the intent to ensure correct song list is opened in new Activity
-                Intent intent = new Intent(Albums.this, CurrentAlbumActivity.class);
+                Intent intent = new Intent(AlbumsActivity.this, CurrentAlbumActivity.class);
                 intent.putExtra("albumTitle", albumName);
                 startActivity(intent);
 

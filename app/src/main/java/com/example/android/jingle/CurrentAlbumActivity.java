@@ -1,15 +1,10 @@
 package com.example.android.jingle;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,16 +16,16 @@ import java.util.ArrayList;
 
 public class CurrentAlbumActivity extends AppCompatActivity {
 
+    ListView listView;
     private String albumName;
     private ArrayList<Song> albumSongList;
-    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.current_album);
 
-        // get album name of selected Album
+        // get album name of selected Album from Bundle
         Bundle bundle = getIntent().getExtras();
         albumName = bundle.getString("albumTitle");
 
@@ -45,28 +40,25 @@ public class CurrentAlbumActivity extends AppCompatActivity {
 
         listView.setAdapter(songsAdapter);
 
-        //set clickListener on the list view to open new Activity when each songs is clicked
+        //set clickListener on the list view to open the Now Playing Activity when each songs is clicked
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 //get name of song that was clicked
-                TextView songNameView = view.findViewById(R.id.songListSongName);
-                String songName = songNameView.getText().toString();
+                String songName = songsInAlbum.get(position).getmSongTitle();
 
                 //get name of artist that was clicked
-                TextView artistNameView = view.findViewById(R.id.songListArtistName);
-                String artistName = artistNameView.getText().toString();
+                String artistName = songsInAlbum.get(position).getmArtist();
 
                 // get Id of image view containing correct album cover
                 int albumCoverId = songsInAlbum.get(position).getmAlbumCover();
 
                 //Create explicit Intent to navigate to Now Playing Activity
                 //Pass this string with the intent to ensure correct song list is opened in new Activity
-                Intent intent = new Intent(CurrentAlbumActivity.this, NowPlaying.class);
+                Intent intent = new Intent(CurrentAlbumActivity.this, NowPlayingActivity.class);
                 intent.putExtra("songTitle", songName);
                 intent.putExtra("artist", artistName);
-                intent.putExtra("albumTitle", albumName);
                 intent.putExtra("albumCoverId", albumCoverId);
                 startActivity(intent);
 

@@ -1,4 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="nav_bar_height">56dp</dimen>
+
+    <!-- Text Sizes -->
+    <dimen name="bigTextSize">18sp</dimen>
+    <dimen name="smallTextSize">16sp</dimen>
+
+    <dimen name="albumCardHeight">190dp</dimen>
+    <dimen name="albumCardWidth">195dp</dimen>
+    <dimen name="cardMargin">5dp</dimen>
+    <dimen name="albumCoverImageHeight">130dp</dimen>
+    <dimen name="smallAlbumCoverDimen">50dp</dimen>
+
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+
+    <dimen name="cornerRadius">2dp</dimen>
+
 </resources>

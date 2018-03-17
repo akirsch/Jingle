@@ -6,6 +6,17 @@
     <string name="AllSongsIcon">All Songs</string>
     <string name="radioIcon">Radio</string>
 
+    <!-- Activity Labels -->
+    <string name="NowPlayingActivityLabel">Now Playing</string>
+    <string name="AlbumsActivityLabel">My Albums</string>
+    <string name="CurrentAlbumsActivityLabel">Selected Album</string>
+    <string name="AllSongsActivityLabel">All My Songs</string>
+
+    <!-- XML Tools labels -->
+    <string name="AlbumName">Album Name</string>
+    <string name="ArtistName">Artist Name</string>
+    <string name="SongName">Song Name</string>
+
     <!-- Descriptions for images in Song List View-->
     <string name="playSongButtonDesc">This button plays this song when clicked</string>
     <string name="albumCoverPic">This Image displays picture of Album cover for this song</string>

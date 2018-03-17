@@ -5,11 +5,11 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Albums"
+        android:label="@string/AlbumsActivityLabel"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Albums">
+        <activity android:name=".AlbumsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,15 +17,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AllSongs"
-            android:label="@string/AllSongsIcon"/>
+            android:name=".AllSongsActivity"
+            android:label="@string/AllSongsActivityLabel">
+        </activity>
+        <activity android:name=".CurrentAlbumActivity"
+            android:label="@string/CurrentAlbumsActivityLabel"/>
         <activity
-            android:name=".Radio"
-            android:label="Radio"/>
-        <activity android:name=".CurrentAlbumActivity"/>
-        <activity
-            android:name=".NowPlaying"
-            android:label="Now Playing"/>
+            android:name=".NowPlayingActivity"
+            android:label="@string/NowPlayingActivityLabel"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

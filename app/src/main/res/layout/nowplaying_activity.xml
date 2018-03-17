@@ -3,110 +3,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.jingle.Albums">
+    android:background="@color/background"
+    tools:context="com.example.android.jingle.AlbumsActivity">
 
     <ImageView
         android:id="@+id/albumCoverImage"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:scaleType="fitCenter"
-        tools:src="@drawable/shwekey_kolot_cover"/>
+        android:layout_height="390dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/shwekey_kolot_cover" />
 
+    <LinearLayout
+        android:id="@+id/songInfoViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/albumCoverImage"
+        android:layout_margin="@dimen/dp_16"
+        android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/nowPlayingSongName"
+            style="@style/LargeTextView"
+            tools:text="Song Name" />
 
+        <TextView
+            android:id="@+id/nowPlayingArtistName"
+            style="@style/SmallTextView"
+            tools:text="Artist Name" />
+
+    </LinearLayout>
 
     <SeekBar
         android:id="@+id/musicSeekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/songActionButtons"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/albumCoverImage"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="36dp">
-
-        <TextView
-            android:id="@+id/nowPlayingSongName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Song Name"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/nowPlayingArtistName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Artist Name"/>
-
-    </LinearLayout>
+        android:layout_above="@id/songActionButtons"
+        android:layout_below="@id/songInfoViews"
+        android:layout_marginTop="16dp" />
 
     <LinearLayout
         android:id="@+id/songActionButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_above="@id/navigationBar"
-        android:layout_margin="16dp">
+        android:background="@color/background"
+        android:orientation="horizontal"
+        android:padding="12dp">
 
         <ImageButton
             android:id="@+id/shuffleButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            style="@style/ImageButtonTheme"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_shuffle"
-            android:background="@android:color/transparent"/>
+            android:src="@drawable/ic_shuffle" />
 
         <ImageButton
             android:id="@+id/skipBackButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_skip_previous"
-            android:background="@android:color/transparent"/>
+            style="@style/ImageButtonTheme"
+            android:src="@drawable/ic_skip_previous" />
 
         <ImageButton
             android:id="@+id/pause_playButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_pause"
-            android:background="@android:color/transparent"/>
+            style="@style/ImageButtonTheme"
+            android:src="@drawable/ic_pause" />
 
         <ImageButton
             android:id="@+id/skipNextButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_skip_next"
-            android:background="@android:color/transparent"/>
+            style="@style/ImageButtonTheme"
+            android:src="@drawable/ic_skip_next" />
 
         <ImageButton
             android:id="@+id/repeatButton"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
+            style="@style/ImageButtonTheme"
             android:src="@drawable/ic_repeat"
-            android:background="@android:color/transparent"/>
+            android:tint="@color/colorPrimaryDark" />
 
     </LinearLayout>
 
-    <android.support.design.widget.BottomNavigationView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/navigationBar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/nav_bar_height"
-        android:background="@color/colorPrimary"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="start"
-        app:menu="@menu/nav_items"
-        app:itemIconTint="@android:color/white"
-        app:itemTextColor="@android:color/white"/>
-
+    <include layout="@layout/bottom_nav" />
 
 
 </RelativeLayout>

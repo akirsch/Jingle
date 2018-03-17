@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/album_navigation"
-        android:title="@string/albumIcon"
+    <item
+        android:id="@+id/album_navigation"
         android:icon="@drawable/ic_album"
-        android:visible="true"/>
-    <item android:id="@+id/music_navigation"
-        android:title="@string/AllSongsIcon"
+        android:title="@string/albumIcon"
+        android:visible="true" />
+    <item
+        android:id="@+id/music_navigation"
         android:icon="@drawable/ic_library_music"
-        android:visible="true"/>
-    <item android:id="@+id/radio_navigation"
-        android:title="@string/radioIcon"
-        android:icon="@drawable/ic_radio"
-        android:visible="true"/>
+        android:title="@string/AllSongsIcon"
+        android:visible="true" />
 </menu>
