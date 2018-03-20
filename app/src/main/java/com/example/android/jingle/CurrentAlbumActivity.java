@@ -2,11 +2,16 @@ package com.example.android.jingle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -56,14 +61,32 @@ public class CurrentAlbumActivity extends AppCompatActivity {
 
                 //Create explicit Intent to navigate to Now Playing Activity
                 //Pass this string with the intent to ensure correct song list is opened in new Activity
-                Intent intent = new Intent(CurrentAlbumActivity.this, NowPlayingActivity.class);
-                intent.putExtra("songTitle", songName);
-                intent.putExtra("artist", artistName);
-                intent.putExtra("albumCoverId", albumCoverId);
-                startActivity(intent);
+                Intent nowPlayingIntent = new Intent(CurrentAlbumActivity.this, NowPlayingActivity.class);
+                nowPlayingIntent.putExtra(Constants.SONG_TITLE, songName);
+                nowPlayingIntent.putExtra(Constants.ARTIST, artistName);
+                nowPlayingIntent.putExtra(Constants.ALBUM_COVER_ID, albumCoverId);
+                startActivity(nowPlayingIntent);
 
             }
         });
+        // find Toolbar view in layout
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        // Set the Toolbar as Action Bar
+        setSupportActionBar(myToolbar);
+        // enable up navigation to parent activity
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public ArrayList<Song> makeAlbumSongList() {

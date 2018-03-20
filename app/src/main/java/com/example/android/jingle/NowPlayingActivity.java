@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
@@ -17,7 +19,6 @@ import android.widget.TextView;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
-    String albumName;
     String songName;
     String artistName;
     int albumCoverId;
@@ -31,9 +32,9 @@ public class NowPlayingActivity extends AppCompatActivity {
 
         // get Strings from the Intent that opened this activity
         Bundle bundle = getIntent().getExtras();
-        songName = bundle.getString("songTitle");
-        artistName = bundle.getString("artist");
-        albumCoverId = bundle.getInt("albumCoverId");
+        songName = bundle.getString(Constants.SONG_TITLE);
+        artistName = bundle.getString(Constants.ARTIST);
+        albumCoverId = bundle.getInt(Constants.ALBUM_COVER_ID);
 
         // set the views in this Activity to display the correct information
         TextView songTitleTextView = findViewById(R.id.nowPlayingSongName);
@@ -70,16 +71,43 @@ public class NowPlayingActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.album_navigation:
-                        Intent intent0 = new Intent(NowPlayingActivity.this, AlbumsActivity.class);
-                        startActivity(intent0);
+                        Intent albumsIntent = new Intent(NowPlayingActivity.this, AlbumsActivity.class);
+                        startActivity(albumsIntent);
                         break;
                     case R.id.music_navigation:
-                        Intent intent1 = new Intent(NowPlayingActivity.this, AllSongsActivity.class);
-                        startActivity(intent1);
+                        Intent allSongsIntent = new Intent(NowPlayingActivity.this, AllSongsActivity.class);
+                        startActivity(allSongsIntent);
                         break;
                 }
                 return true;
             }
         });
+
+        // find Toolbar view in layout
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        // Set the Toolbar as Action Bar
+        setSupportActionBar(myToolbar);
+        // Set title of action bar to appropriate label for this Activity
+        getSupportActionBar().setTitle(R.string.NowPlayingActivityLabel);
+        // enable up navigation to parent activity
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    /**
+     * This method will cause the app to navigate back to the Activity that started the Now Playing
+     * Activity
+     *
+     * @param item the up icon arrow
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up button
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

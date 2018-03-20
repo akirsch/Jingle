@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,6 +25,7 @@ public class AllSongsActivity extends AppCompatActivity {
 
     ListView allSongsListView;
     private ArrayList<Song> mySongsArray;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +63,11 @@ public class AllSongsActivity extends AppCompatActivity {
 
                 //Create explicit Intent to navigate to Now Playing Activity
                 //Pass this string with the intent to ensure correct song list is opened in new Activity
-                Intent intent = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
-                intent.putExtra("songTitle", nameOfSong);
-                intent.putExtra("artist", nameOfArtist);
-                intent.putExtra("albumCoverId", albumCoverId);
-                startActivity(intent);
+                Intent nowPlayingIntent = new Intent(AllSongsActivity.this, NowPlayingActivity.class);
+                nowPlayingIntent.putExtra(Constants.SONG_TITLE, nameOfSong);
+                nowPlayingIntent.putExtra(Constants.ARTIST, nameOfArtist);
+                nowPlayingIntent.putExtra(Constants.ALBUM_COVER_ID, albumCoverId);
+                startActivity(nowPlayingIntent);
 
             }
         });
@@ -87,6 +89,13 @@ public class AllSongsActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        // find Toolbar view in layout
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        // Set the Toolbar as Action Bar
+        setSupportActionBar(myToolbar);
+        // Set title of action bar to appropriate label for this Activity
+        getSupportActionBar().setTitle(R.string.AllSongsActivityLabel);
 
     }
 

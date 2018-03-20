@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,12 +29,12 @@ public class AlbumsActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.album_navigation:
-                        Intent intent0 = new Intent(AlbumsActivity.this, AlbumsActivity.class);
-                        startActivity(intent0);
+                        Intent albumsIntent = new Intent(AlbumsActivity.this, AlbumsActivity.class);
+                        startActivity(albumsIntent);
                         break;
                     case R.id.music_navigation:
-                        Intent intent1 = new Intent(AlbumsActivity.this, AllSongsActivity.class);
-                        startActivity(intent1);
+                        Intent allSongsIntent = new Intent(AlbumsActivity.this, AllSongsActivity.class);
+                        startActivity(allSongsIntent);
                         break;
                 }
                 return true;
@@ -86,5 +87,12 @@ public class AlbumsActivity extends AppCompatActivity {
 
             }
         });
+
+        // find Toolbar view in layout
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        // Set the Toolbar as Action Bar
+        setSupportActionBar(myToolbar);
+        // Set title of action bar to appropriate label for this Activity
+        getSupportActionBar().setTitle(R.string.AlbumsActivityLabel);
     }
 }

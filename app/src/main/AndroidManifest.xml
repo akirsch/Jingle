@@ -8,7 +8,7 @@
         android:label="@string/AlbumsActivityLabel"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".AlbumsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,8 @@
             android:label="@string/AllSongsActivityLabel">
         </activity>
         <activity android:name=".CurrentAlbumActivity"
-            android:label="@string/CurrentAlbumsActivityLabel"/>
+            android:label="@string/CurrentAlbumsActivityLabel"
+            android:parentActivityName=".AlbumsActivity"/>
         <activity
             android:name=".NowPlayingActivity"
             android:label="@string/NowPlayingActivityLabel"/>

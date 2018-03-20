@@ -4,7 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:fitsSystemWindows="true"
     tools:context="com.example.android.jingle.AlbumsActivity">
+
+    <include layout="@layout/toolbar" />
 
     <ImageView
         android:id="@+id/albumCoverImage"
